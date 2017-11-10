@@ -6,7 +6,7 @@ from os import makedirs
 # GDC project name from which the data will be retrieved
 
 def get_project_geq_data(projID):
-    parentFolder = "C:/Users/Vitor Vieira/MEOCloud/Projectos/PhDThesis/GDC-Portal/"  # Main folder where local project data is kept
+    parentFolder = "/path/to/file"  # Main folder where local project data is kept
     projFolder = parentFolder + projID + "/"  # Selected GDC project folder
     geq_main_folder = projFolder + "GEQ/"  # Gene expression data folder
     geq_dfs_folder = geq_main_folder + "Datasets/"  # Folder to save the processed datasets
