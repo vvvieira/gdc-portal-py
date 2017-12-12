@@ -8,6 +8,13 @@
   },
   {
   "type": "container",
+  "title": "Miniconda 3",
+  "description": "none",
+  "logo": "https://www.ceb.uminho.pt/Content/images/EEUM_eng.png",
+  "image": "bisbii/alpine-miniconda3:latest"
+  },
+  {
+  "type": "container",
   "title": "Ubuntu Base Container",
   "description": "none",
   "logo": "https://www.ceb.uminho.pt/Content/images/EEUM_eng.png",
