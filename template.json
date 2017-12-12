@@ -5,5 +5,12 @@
   "description": "none",
   "logo": "https://www.ceb.uminho.pt/Content/images/EEUM_eng.png",
   "image": "bisbii/alpine-base:latest"
+  },
+  {
+  "type": "container",
+  "title": "Ubuntu Base Container",
+  "description": "none",
+  "logo": "https://www.ceb.uminho.pt/Content/images/EEUM_eng.png",
+  "image": "bisbii/ubuntu-base:latest"
   }
 ]
