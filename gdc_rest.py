@@ -13,7 +13,7 @@ from_json = json.JSONDecoder().decode
 BASE_URL = "https://gdc-api.nci.nih.gov/"
 
 class Fields(object):
-    CASE = read_file("fields/casefields.txt").split("\n")[:-1]
+    CASE = read_file("resources/fields/casefields.txt").split("\n")[:-1]
 
 
 def md5(fname):
