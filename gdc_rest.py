@@ -29,7 +29,7 @@ def validate_response(response, raw=False):
         if raw:
             return response
         else:
-            return response.content
+            return response.content.decode('utf-8')
     else:
         response.raise_for_status()
 
