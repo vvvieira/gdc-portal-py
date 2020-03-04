@@ -10,7 +10,7 @@ from file_utils import read_file
 
 to_json = json.JSONEncoder().encode
 from_json = json.JSONDecoder().decode
-BASE_URL = "https://gdc-api.nci.nih.gov/"
+BASE_URL = "https://api.gdc.cancer.gov/"
 
 class Fields(object):
     CASE = read_file("resources/fields/casefields.txt").split("\n")[:-1]

@@ -68,7 +68,7 @@ class LayeredDataframe():
     def extract(self, identifier, metacolumn):
         records = self.data[identifier].tolist()
         frames = [pd.DataFrame(records[i], index=[i] * len(records[i])) for i in range(len(records))]
-        dataframe = pd.concat([pd.concat(frames, axis=0), self.data[metacolumn]], join="outer", axis=1)
+        dataframe = pd.concat([pd.concat(frames, axis=0), self.data[metacolumn]], join="outer", axis=1, sort=True)
         dataframe.index = list(range(dataframe.shape[0]))
         return dataframe
 
@@ -183,12 +183,10 @@ class GDCFileData(object):
         self.handler.req.downloadFromTSVMetadata(fd, writeFolder=path)
 
     def updateIndex(self):
-        fileids = self.getFileData()[self.fileidcolumn]
-        caseids = self.getFileData()[self.metacolumn]
-        idx = pd.MultiIndex(
-            levels=[tuple(fileids.tolist()), tuple(caseids.tolist())],
-            names=[self.fileidcolumn, self.metacolumn],
-            labels=[list(range(len(fileids))), list(range(len(caseids)))])
+        fileids = self.getFileData()[self.fileidcolumn].tolist()
+        caseids = self.getFileData()[self.metacolumn].tolist()
+        idx = pd.MultiIndex.from_tuples(list(zip(*[caseids,fileids])),
+            names=[self.metacolumn, self.fileidcolumn])
         print("Sample index has been updated")
         self.dataindex = idx
 
